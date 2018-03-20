@@ -14,6 +14,10 @@ app.set('view engine', 'hbs');
 /* ===== Temprary route for dev purposes ===== */
 /* =========================================== */
 
+app.get('/card', (req, res) => {
+    res.render('card.hbs');
+});
+
 /* ===== End of user based temprary route ===== */
 
 app.get('/', (req, res) => {
