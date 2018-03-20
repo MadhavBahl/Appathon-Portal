@@ -1,0 +1,28 @@
+{
+  "name": "adg-appathon-judge-portal",
+  "version": "1.0.0",
+  "description": "Judgement Portal For Appathon 2k18",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MadhavBahlMD/Appathon-Portal.git"
+  },
+  "keywords": [
+    "App-A-Thon",
+    "Portal"
+  ],
+  "author": "Madhav Bahl",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MadhavBahlMD/Appathon-Portal/issues"
+  },
+  "homepage": "https://github.com/MadhavBahlMD/Appathon-Portal#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "hbs": "^4.0.1"
+  }
+}
