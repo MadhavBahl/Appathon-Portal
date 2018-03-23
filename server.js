@@ -25,7 +25,10 @@ app.get('/', (req, res) => {
 }); 
 
 app.post('/review/:team', (req, res) => {
+    var team = req.params.team;
+    
     res.render('review.hbs', {
+        team: team,
         name1: 'Snoop Dogg',
         name2: 'Hitler',
         name3: 'Random?'

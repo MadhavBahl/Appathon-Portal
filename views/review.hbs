@@ -109,7 +109,7 @@
                                                 <p class="underline">Android</p>
 
                                                 <h4>Description</h4>
-                                                <p class="underline">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                                                <p class="underline" style="text-align: justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                                                     Nulla imperdiet erat ut erat iaculis, sit amet molestie mauris fringilla. 
                                                     Nulla dignissim consectetur maximus. Vivamus quam lacus, sagittis fermentum 
                                                     mattis vitae, malesuada accumsan ligula. Mauris ac iaculis nibh, at ultricies 
@@ -119,6 +119,8 @@
 
                                                 <h4>Project Links</h4>
                                                 <p class="underline">https://github.com/MadhavBahlMD</p>
+
+                                                <br>
                                             </div>
                                             
 
@@ -133,10 +135,157 @@
                 </div>
             </div>
 
+        </div>
+    </div>
+
+
+    <div class="footerBtw">
+        <div class="container">
             
         </div>
     </div>
 
+
+    <div class="mainCard" id="mainCard2">
+        <div class="container mainCardContainer">
+            <div class="row">
+                <div class="col s12 m12">
+                    <div class="card">
+                        <div class="card-content innerCard">
+                            <div class="row">
+                                <div class="col s12 m6">
+                                    <h1 class="step"><b>STEP 3</b></h1>
+                                    <h5 class="step between"><b>Marks Distribution</b></h5>
+                                </div>
+
+                                <div class="col m4 offset-m2 hide-on-small-only" style="text-align: right;">
+                                    <img src="/img/fullicon.webp" class="responsive-img ninety" alt="">
+                                </div>
+                            </div>
+
+                            <br>
+
+                            <form action="/submit/{{team}}" method="post">
+                                <div class="row">
+                                    {{!-- Enter Marks For First Criteria --}}
+                                    <div class="col s12 m12">
+                                        <div class="card hoverable">
+                                            <div class="card-content innerDetailCard">
+                                                
+                                                <h5 style="">1. First Criteria</h5>
+                                                
+                                                <div class="container marksContainier">
+                                                    
+                                                    <div class="row">
+                                                        <div class="col s12 m6 align-left">
+                                                            <span class="dotted-underline" style="font-size: 18px;">Max Marks: 10</span>
+                                                        </div>
+                                                        <div class="col s12 m4 align-right" id="marks">
+                                                            <span style="font-size: 18px;">Marks Awarded: </span>
+                                                        </div>
+                                                        <div class="col s12 m2 input-field align-center" style="text-align: center;">
+                                                            <input placeholder="Eg. 9" name="marks1" style="text-align: center;" type="text" >
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    {{!-- Enter Marks For Second Criteria --}}
+                                    <div class="col s12 m12">
+                                        <div class="card hoverable">
+                                            <div class="card-content innerDetailCard">
+                                                
+                                                <h5 style="">2. Second Criteria</h5>
+                                                
+                                                <div class="container marksContainier">
+                                                    
+                                                    <div class="row">
+                                                        <div class="col s12 m6 align-left">
+                                                            <span class="dotted-underline" style="font-size: 18px;">Max Marks: 10</span>
+                                                        </div>
+                                                        <div class="col s12 m4 align-right" id="marks">
+                                                            <span style="font-size: 18px;">Marks Awarded: </span>
+                                                        </div>
+                                                        <div class="col s12 m2 input-field align-center" style="text-align: center;">
+                                                            <input placeholder="Eg. 9" name="marks2" style="text-align: center;" type="text" >
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {{!-- Enter Marks For Third Criteria --}}
+                                    <div class="col s12 m12">
+                                        <div class="card hoverable">
+                                            <div class="card-content innerDetailCard">
+                                                
+                                                <h5 style="">3. Third Criteria</h5>
+                                                
+                                                <div class="container marksContainier">
+                                                    
+                                                    <div class="row">
+                                                        <div class="col s12 m6 align-left">
+                                                            <span class="dotted-underline" style="font-size: 18px;">Max Marks: 10</span>
+                                                        </div>
+                                                        <div class="col s12 m4 align-right" id="marks">
+                                                            <span style="font-size: 18px;">Marks Awarded: </span>
+                                                        </div>
+                                                        <div class="col s12 m2 input-field align-center" style="text-align: center;">
+                                                            <input placeholder="Eg. 9" name="marks3" style="text-align: center;" type="text" >
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    {{!-- Additional Comments --}}
+                                    <div class="col s12 m12">
+                                        <div class="card hoverable">
+                                            <div class="card-content innerDetailCard">
+                                                
+                                                <h5 style="">Additional Comments</h5>
+                                                
+                                                <div class="container marksContainier">
+                                                    
+                                                    <div class="row">
+                                                        <br>
+                                                        <div class="col s12 m12 input-field align-center" style="text-align: center;">
+                                                            <input placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " name="marks3" style="text-align: center;" type="text" >
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col s12 m12 align-center center">
+                                        <br>
+                                        <button class="btn waves-effect waves-light btn-large align-center" type="submit">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
 
     <div class="footer">
         <div class="container">
