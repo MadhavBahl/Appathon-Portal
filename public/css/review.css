@@ -66,3 +66,11 @@ html, body {
     color: white;
     margin-top: -10vh;
 }
+
+/* .innerDetailCard {
+    color: #999da0;
+} */
+
+.underline {
+    border-bottom: 1px solid #999da0;
+}
