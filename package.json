@@ -4,7 +4,11 @@
   "description": "Judgement Portal For Appathon 2k18",
   "main": "server.js",
   "scripts": {
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": "6.2.2"
   },
   "repository": {
     "type": "git",
