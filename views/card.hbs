@@ -57,14 +57,15 @@
                                     <div class="card hoverable">
                                         <div class="card-content cardPad">
                                             
-                                            <p>TEAM 1</p>                                
-                                            <h4 class="center-align fixFont">NAME</h4>
+                                            <p>TEAM 1</p>
+                                            <h5 class="center-align fixFont">NAME</h5>
+                                            <p class="done">{{done}}</p>
                                             <form action="/review/1" class="sendForm" method="POST">
                                                 <div class="right-align">
-                                                    <button class="btn waves-effect waves-light padLess" type="submit" name="action">Submit</button>
+                                                    <button id="btn1" class="btn waves-effect waves-light padLess" type="submit" name="action">Submit</button>
                                                 </div>
                                             </form>
-                                            
+
                                         </div>
                                     </div>
                                 </div>
@@ -74,8 +75,8 @@
                                         <div class="card-content cardPad">
                                             
                                             <p>TEAM 2</p>
-                                            <h5 class="center-align">NAME</h5>
-                                            <form action="/review/1" class="sendForm" method="POST">
+                                            <h5 class="center-align fixFont">NAME</h5>
+                                            <form action="/review/2" class="sendForm" method="POST">
                                                 <div class="right-align">
                                                     <button class="btn waves-effect waves-light padLess" type="submit" name="action">Submit</button>
                                                 </div>
@@ -90,7 +91,7 @@
                                         <div class="card-content cardPad">
                                             
                                             <p>TEAM 3</p>
-                                            <h5 class="center-align">NAME</h5>
+                                            <h5 class="center-align fixFont">NAME</h5>
                                             <form action="/review/1" class="sendForm" method="POST">
                                                 <div class="right-align">
                                                     <button class="btn waves-effect waves-light padLess" type="submit" name="action">Submit</button>
@@ -106,13 +107,13 @@
                                         <div class="card-content cardPad">
                                             
                                             <p>TEAM 4</p>
-                                            <h5 class="center-align">NAME</h5>
+                                            <h5 class="center-align fixFont">NAME</h5>
                                             <form action="/review/1" class="sendForm" method="POST">
                                                 <div class="right-align">
                                                     <button class="btn waves-effect waves-light padLess" type="submit" name="action">Submit</button>
                                                 </div>
                                             </form>
-                                            
+
                                         </div>
                                     </div>
                                 </div>
@@ -130,5 +131,6 @@
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/activeCards.js"></script>
 </body>
 </html>

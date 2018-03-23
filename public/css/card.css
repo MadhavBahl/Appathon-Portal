@@ -37,7 +37,7 @@ html, body {
 }
 
 .cardPad {
-    padding: 7px !important;
+    padding: 10px !important;
 }
 
 .padLess {
@@ -52,4 +52,8 @@ html, body {
 
 .sendForm {
     margin-bottom: 0;
+}
+
+.done {
+    display: none;
 }

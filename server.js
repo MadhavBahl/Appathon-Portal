@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const hbs = require('hbs');
 
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 3000;
 
 var app = express();
 app.use(bodyParser());
@@ -15,7 +15,7 @@ app.set('view engine', 'hbs');
 /* =========================================== */
 
 app.get('/card', (req, res) => {
-    res.render('card.hbs');
+    res.render('card.hbs', {done: true});
 });
 
 /* ===== End of user based temprary route ===== */
