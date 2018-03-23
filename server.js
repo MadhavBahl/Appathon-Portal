@@ -21,8 +21,16 @@ app.get('/card', (req, res) => {
 /* ===== End of user based temprary route ===== */
 
 app.get('/', (req, res) => {
-    res.render('index.hbs', {title: 'Hello World!'});
+    res.render('index.hbs', {done: true});
 }); 
+
+app.post('/review/:team', (req, res) => {
+    res.render('review.hbs', {
+        name1: 'Snoop Dogg',
+        name2: 'Hitler',
+        name3: 'Random?'
+    })
+});
 
 app.listen (port, () => {
     console.log(`Server is up on port ${port}`);
