@@ -21,6 +21,7 @@ html, body {
 
 .innerCard {
     color: #686868;
+    min-height: 70vh;
 }
 
 .step {
@@ -33,7 +34,7 @@ html, body {
 }
 
 .ninety {
-    width: 67%;
+    width: 72%;
     padding-right: 2%;
 }
 
@@ -62,46 +63,7 @@ html, body {
 .footer {
     background-color: #0dcdc0;
     width: 100%;
-    height: 12vh;
+    min-height: 14vh;
     color: white;
     margin-top: -10vh;
-}
-
-/* .innerDetailCard {
-    color: #999da0;
-} */
-
-.underline {
-    border-bottom: 1px solid #999da0;
-    padding: 4px;
-}
-
-.footerBtw {
-    background-color: #0dcdc0;
-    width: 100%;
-    height: 24vh;
-    color: white;
-    margin-top: -10vh;
-}
-
-#mainCard2 {
-    margin-top: -50px;
-}
-
-.dotted-underline {
-    border-bottom: 1px dotted #999da0;
-    padding: 4px;
-}
-
-/* .marksContainier {
-    width: 90%;
-} */
-
-#marks {
-    text-align: right !important;
-}
-
-.input-field {
-    margin: 0;
-    margin-top: -10px;
 }

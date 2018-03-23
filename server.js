@@ -18,6 +18,16 @@ app.get('/card', (req, res) => {
     res.render('card.hbs', {done: true});
 });
 
+app.get('/review', (req, res) => {
+    res.render('review.hbs', {
+        team: '1'
+    });
+});
+
+app.get('/submit', (req, res) => {
+    res.render('submit.hbs');
+});
+
 /* ===== End of user based temprary route ===== */
 
 app.get('/', (req, res) => {
@@ -36,8 +46,8 @@ app.post('/review/:team', (req, res) => {
 
 });
 
-app.get('/review', (req, res) => {
-    res.render('review.hbs');
+app.post('/save/:team', (req, res) => {
+    res.render('submit.hbs');
 });
 
 app.listen (port, () => {

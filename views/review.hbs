@@ -165,7 +165,7 @@
 
                             <br>
 
-                            <form action="/submit/{{team}}" method="post">
+                            <form action="/save/{{team}}" method="POST">
                                 <div class="row">
                                     {{!-- Enter Marks For First Criteria --}}
                                     <div class="col s12 m12">
@@ -183,8 +183,9 @@
                                                         <div class="col s12 m4 align-right" id="marks">
                                                             <span style="font-size: 18px;">Marks Awarded: </span>
                                                         </div>
-                                                        <div class="col s12 m2 input-field align-center" style="text-align: center;">
-                                                            <input placeholder="Eg. 9" name="marks1" style="text-align: center;" type="text" >
+                                                        <div class="col s12 m2 input-field align-center active" style="text-align: center;">
+                                                            <input placeholder="Eg. 9" id="mark1" name="marks1" style="text-align: center; validate" type="text" >
+                                                            
                                                         </div>
                                                     </div>
                                                     
