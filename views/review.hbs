@@ -1,0 +1,130 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="ADG: Apple Developers Group
+    is a free initiative to assist developers in higher education
+    institution (VIT), who intend to teach development for the
+    iPhone, iPad and iPod Touch.This student body allows
+    developers to create teams of up to 200 members who can
+    develop, test, debug and distribute applications via the
+    App Store giving them complete access to developer
+    tools, including iPhone SDK and
+    iPhone Dev Centre resources." />
+    <title>App-A-Thon 2k18</title>
+    
+    <link rel="shortcut icon" href="/img/adg-logo.png">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="/css/materialize.min.css"  media="screen,projection"/>
+    <link rel="stylesheet" href="/css/review.css">
+</head>
+<body>
+
+    <div class="header">
+        <div class="container">
+            <div class="row" style="padding-top: 28px;">
+                <div class="col s12 m5">
+                    <img src="/img/appathon.png" class="responsive-img" alt="">
+                </div>
+
+                <div class="col s12 m5 offset-m1 hide-on-small-only">
+                    <h2 style="text-align: right;">Marking Portal</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mainCard" id="mainCard1">
+        <div class="container mainCardContainer">
+            <div class="row">
+                <div class="col s12 m12">
+                    <div class="card">
+                        <div class="card-content innerCard">
+                            <div class="row">
+                                <div class="col s12 m6">
+                                    <h1 class="step"><b>STEP 2</b></h1>
+                                    <h5 class="step between"><b>Team Review</b></h5>
+                                </div>
+
+                                <div class="col m4 offset-m2 hide-on-small-only" style="text-align: right;">
+                                    <img src="/img/fullicon.webp" class="responsive-img ninety" alt="">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col s12 m4">
+                                    <div class="card hoverable">
+                                        <div class="card-content cardPad">
+                                            
+                                            <p>TEAM 1</p>
+                                            <h5 class="center-align fixFont">NAME</h5>
+                                            
+                                            <form action="/review/1" class="sendForm" method="POST">
+                                                <div class="right-align">
+                                                    <button id="btn1" class="btn waves-effect waves-light padLess" type="submit" name="action">Submit</button>
+                                                </div>
+                                            </form>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col s12 m4">
+                                    <div class="card hoverable">
+                                        <div class="card-content cardPad">
+                                            
+                                            <p>TEAM 2</p>
+                                            <h5 class="center-align fixFont">NAME</h5>
+                                            <p class="done">{{done}}</p>
+                                            <form action="/review/2" class="sendForm" method="POST">
+                                                <div class="right-align">
+                                                    <button id="btn2" class="btn waves-effect waves-light padLess" type="submit" name="action">Submit</button>
+                                                </div>
+                                            </form>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col s12 m4">
+                                    <div class="card hoverable">
+                                        <div class="card-content cardPad">
+                                            
+                                            <p>TEAM 3</p>
+                                            <h5 class="center-align fixFont">NAME</h5>
+                                            <form action="/review/1" class="sendForm" method="POST">
+                                                <div class="right-align">
+                                                    <button class="btn waves-effect waves-light padLess" type="submit" name="action">Submit</button>
+                                                </div>
+                                            </form>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+
+
+    <div class="footer">
+        <div class="container">
+            
+        </div>
+    </div>
+
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="/js/materialize.min.js"></script>
+    <script type="text/javascript" src="/js/activeCards.js"></script>
+</body>
+</html>

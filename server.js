@@ -29,7 +29,12 @@ app.post('/review/:team', (req, res) => {
         name1: 'Snoop Dogg',
         name2: 'Hitler',
         name3: 'Random?'
-    })
+    });
+
+});
+
+app.get('/review', (req, res) => {
+    res.render('review.hbs');
 });
 
 app.listen (port, () => {
