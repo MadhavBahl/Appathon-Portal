@@ -42,12 +42,32 @@
                     <div class="card">
                         <div class="card-content innerCard">
                             <div class="row">
-                                <div class="col s12 m6">
+                                <div class="col s12 m4">
                                     <h1 class="step"><b>STEP 2</b></h1>
                                     <h5 class="step between"><b>Team Review</b></h5>
                                 </div>
 
-                                <div class="col m4 offset-m2 hide-on-small-only" style="text-align: right;">
+                                <div class="col s12 m4 align-center center">
+                                    <br>
+                                    {{!-- <a href="#modal1" class="-effect waves-light btn modal-trigger" type="submit">Go Back</a> --}}
+                                      <button data-target="modal1" class="waves-effect waves-light btn btn-small modal-trigger">Modal</button>
+                                </div>
+
+                                <!-- Modal Structure -->
+                                <div id="modal1" class="modal" style=" height: 150px; margin-top: 150px;">
+                                    <div class="modal-content" style=" padding-bottom: 0px;">
+                                        <h4 style="text-align: center;">Modal Header</h4>
+                                        {{!-- <p>A bunch of text</p> --}}
+                                    </div>
+                                    <div class="modal-footer center">
+                                        <form action="/" class="align-center center" method="get">
+                                            <button type="submit" class="modal-action modal-close waves-effect center waves-light btn ">Agree</button>
+                                        </form>
+                                        
+                                    </div>
+                                </div>
+
+                                <div class="col m4 hide-on-small-only" style="text-align: right;">
                                     <img src="/img/fullicon.webp" class="responsive-img ninety" alt="">
                                 </div>
                             </div>
@@ -298,5 +318,11 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="/js/materialize.min.js"></script>
     <script type="text/javascript" src="/js/activeCards.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('.modal').modal();
+        });
+    </script>
 </body>
 </html>
