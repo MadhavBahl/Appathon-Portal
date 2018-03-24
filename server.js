@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const hbs = require('hbs');
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8000;
 
 var app = express();
 app.use(bodyParser());
@@ -31,8 +31,33 @@ app.get('/submit', (req, res) => {
 /* ===== End of user based temprary route ===== */
 
 app.get('/', (req, res) => {
-    res.render('index.hbs', {done: true});
+    res.render('choose.hbs', {done: true});
 }); 
+
+app.get('/:judge', (req, res) => {
+    res.render('index.hbs', {
+        done1: false,
+        done2: true,
+        done3: false,
+        done4: false,
+        done5: true,
+        done6: true,
+        done7: true,
+        done8: true,
+        done9: true,
+        done10: true,
+        done11: true,
+        done12: true,
+        done13: true,
+        done14: true,
+        done15: true,
+        done16: true,
+        done17: true,
+        done18: true,
+        done19: true,
+        done20: false
+    });
+});
 
 app.post('/review/:team', (req, res) => {
     var team = req.params.team;
@@ -48,6 +73,19 @@ app.post('/review/:team', (req, res) => {
 
 app.post('/save/:team', (req, res) => {
     res.render('submit.hbs');
+});
+
+app.get('/:judge/review/:team', (req, res) => {
+    var judge = req.params.judge;
+    var team = req.params.team;
+    // res.send(judge);
+});
+
+app.post('/:judge/submit/:team', (req, res) => {
+    var judge = req.params.judge;
+    var team = req.params.team;
+    var marks = req.body.marks1 + req.body.marks2 + req.body.marks3;
+
 });
 
 app.listen (port, () => {
