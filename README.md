@@ -17,3 +17,5 @@ This is the official repository for App-A-Thon portal
 * Description --
 
 * GitHub Link/ Drive Link
+
+**Note :** The Teams page is hardcoded 

@@ -34,6 +34,11 @@ app.get('/', (req, res) => {
     res.render('choose.hbs', {done: true});
 }); 
 
+app.post('/team/:teams', (req, res) => {
+    var teamNum = req.params.teams;
+    res.send('<h1> Hello World </h1>');
+});
+
 app.get('/:judge', (req, res) => {
     res.render('index.hbs', {
         done1: false,
