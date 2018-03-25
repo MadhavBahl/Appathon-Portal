@@ -2,6 +2,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const hbs = require('hbs');
 
+const {addTeam} = require('./serverFiles/addTeam');
+const {checkTeam} = require('./serverFiles/checkTeam');
+
 const port = process.env.PORT || 8000;
 
 var app = express();
@@ -28,15 +31,38 @@ app.get('/submit', (req, res) => {
     res.render('submit.hbs');
 });
 
+app.get('/teamNum/:team', (req, res) => {
+    checkTeam(req.params.team, (result) => {
+        res.send(result);
+    });
+});
+
 /* ===== End of user based temprary route ===== */
 
 app.get('/', (req, res) => {
     res.render('choose.hbs', {done: true});
 }); 
 
-app.post('/team/:teams', (req, res) => {
+app.post('/addTeam/:teams', (req, res) => {
     var teamNum = req.params.teams;
-    res.send('<h1> Hello World </h1>');
+    var teamDet = {
+        teamNum: teamNum,
+        name: req.body.name,
+        rollNo: req.body.rollno,
+        email: req.body.email,
+        productName: req.body.productName,
+        teamName: req.body.teamName,
+        description: req.body.description,
+        links: req.body.links
+    }
+    addTeam(teamDet, (err, result) => {
+        if (err) {
+            console.log(err);
+            res.status(400).send(err);
+        }
+
+        res.send(result);
+    });
 });
 
 app.get('/:judge', (req, res) => {
@@ -77,6 +103,7 @@ app.post('/review/:team', (req, res) => {
 });
 
 app.post('/save/:team', (req, res) => {
+
     res.render('submit.hbs');
 });
 

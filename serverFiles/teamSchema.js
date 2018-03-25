@@ -39,9 +39,21 @@ var teamSchema = new Schema({
     }, links: {
         type: String,
         required: false   
+    }, done1: {
+        type: Boolean,
+        required: false,
+        default: false
+    }, done2: {
+        type: Boolean,
+        required: false,
+        default: false
+    }, done3: {
+        type: Boolean,
+        required: false,
+        default: false
     }
 });
 
 var Team = mongoose.model('Team', teamSchema);
 
-module.exports = {Participant};
+module.exports = {Team};
