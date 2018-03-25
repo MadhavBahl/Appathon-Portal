@@ -4,6 +4,8 @@ const hbs = require('hbs');
 
 const {addTeam} = require('./serverFiles/addTeam');
 const {checkTeam} = require('./serverFiles/checkTeam');
+const {getAllTeams} = require('./serverFiles/getAllTeams');
+const {getDone} = require('./serverFiles/getDone');
 
 const port = process.env.PORT || 8000;
 
@@ -37,6 +39,16 @@ app.get('/teamNum/:team', (req, res) => {
     });
 });
 
+app.get('/getDone/:judge', (req, res) => {
+    getDone(req.params.judge, (err, result) => {
+        if (err) {
+            res.send(err);
+        }
+        // res.send(result);
+        res.render('index.hbs', result);
+    });
+});
+
 /* ===== End of user based temprary route ===== */
 
 app.get('/', (req, res) => {
@@ -66,27 +78,13 @@ app.post('/addTeam/:teams', (req, res) => {
 });
 
 app.get('/:judge', (req, res) => {
-    res.render('index.hbs', {
-        done1: false,
-        done2: true,
-        done3: false,
-        done4: false,
-        done5: true,
-        done6: true,
-        done7: true,
-        done8: true,
-        done9: true,
-        done10: true,
-        done11: true,
-        done12: true,
-        done13: true,
-        done14: true,
-        done15: true,
-        done16: true,
-        done17: true,
-        done18: true,
-        done19: true,
-        done20: false
+
+    getDone(req.params.judge, (err, result) => {
+        if (err) {
+            res.send(err);
+        }
+        // res.send(result);
+        res.render('index.hbs', result);
     });
 });
 
