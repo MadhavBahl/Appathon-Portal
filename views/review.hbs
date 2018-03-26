@@ -44,7 +44,7 @@
                             <div class="row">
                                 <div class="col s12 m4">
                                     <h1 class="step"><b>STEP 2</b></h1>
-                                    <h5 class="step between"><b>Team Review</b></h5>
+                                    <h5 class="step between"><b>Team Review  </b></h5>
                                 </div>
 
                                 <div class="col s12 m4 align-center center">
@@ -73,12 +73,15 @@
                             </div>
 
                             <div class="row">
+
+                                {{#each participant}}
+
                                 <div class="col s12 m4">
                                     <div class="card hoverable">
                                         <div class="card-content cardPad">
                                             
-                                            <span class="card-title">Register Number</span>
-                                            <h5 class="center-align innerDetailCard fixFont">Name 1</h5>
+                                            <span class="card-title"> {{this.rollNo}} </span>
+                                            <h5 class="center-align innerDetailCard fixFont"> {{this.name}} </h5>
                                             
                                             
 
@@ -86,7 +89,9 @@
                                     </div>
                                 </div>
 
-                                <div class="col s12 m4">
+                                {{/each}}
+
+                                {{!-- <div class="col s12 m4">
                                     <div class="card hoverable">
                                         <div class="card-content cardPad">
                                             
@@ -109,7 +114,7 @@
                                             
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
 
                             </div>
 
@@ -122,24 +127,22 @@
                                             
                                             <br>
                                             <div class="container">
-                                                <h4>Product Name</h4>
-                                                <p class="underline">Name 1</p>
 
-                                                <h4>Platform</h4>
-                                                <p class="underline">Android</p>
+                                                <h4>Product Name</h4>
+                                                <p class="underline">{{teamName}}</p>
+
+                                                <h4>Product Name</h4>
+                                                <p class="underline">{{productName}}</p>
 
                                                 <h4>Description</h4>
-                                                <p class="underline" style="text-align: justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                                    Nulla imperdiet erat ut erat iaculis, sit amet molestie mauris fringilla. 
-                                                    Nulla dignissim consectetur maximus. Vivamus quam lacus, sagittis fermentum 
-                                                    mattis vitae, malesuada accumsan ligula. Mauris ac iaculis nibh, at ultricies 
-                                                    neque. Cras blandit arcu dolor, ac egestas dolor interdum at. Nunc sit amet 
-                                                    viverra sem. Etiam porttitor non nunc vitae cursus. Nulla convallis pulvinar nibh, 
-                                                    id fermentum ligula tempor vel.</p>
+                                                <p class="underline" style="text-align: justify;">{{description}}</p>
 
                                                 <h4>Project Links</h4>
-                                                <p class="underline">https://github.com/MadhavBahlMD</p>
-
+                                                {{#if links}}
+                                                <p class="underline">{{links}} </p>
+                                                {{else}}
+                                                <p class="underline">https://github.com/MadhavBahlMD </p>
+                                                {{/if}}
                                                 <br>
                                             </div>
                                             

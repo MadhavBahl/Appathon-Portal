@@ -14,13 +14,10 @@ var teamSchema = new Schema({
     }, judgeThree: {
         type: Object,
         required: false
-    }, name: {
+    }, participant: {
         type: Array,
         required: true,
         trim: true
-    }, rollNo: {
-        type: Array,
-        required: true
     }, email: {
         type: String,
         required: true,

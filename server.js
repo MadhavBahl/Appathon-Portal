@@ -6,6 +6,7 @@ const {addTeam} = require('./serverFiles/addTeam');
 const {checkTeam} = require('./serverFiles/checkTeam');
 const {getAllTeams} = require('./serverFiles/getAllTeams');
 const {getDone} = require('./serverFiles/getDone');
+const {getTeam} = require('./serverFiles/getTeam');
 
 const port = process.env.PORT || 8000;
 
@@ -26,6 +27,18 @@ app.get('/card', (req, res) => {
 app.get('/review', (req, res) => {
     res.render('review.hbs', {
         team: '1'
+    });
+});
+
+app.get('/getAll', (req, res) => {
+
+    getAllTeams((err, result) => {
+        if (err) {
+            console.log(err);
+            res.send(err);
+        }
+
+        res.send(result);
     });
 });
 
@@ -59,8 +72,7 @@ app.post('/addTeam/:teams', (req, res) => {
     var teamNum = req.params.teams;
     var teamDet = {
         teamNum: teamNum,
-        name: req.body.name,
-        rollNo: req.body.rollno,
+        participant: req.body.participant,
         email: req.body.email,
         productName: req.body.productName,
         teamName: req.body.teamName,
@@ -78,25 +90,38 @@ app.post('/addTeam/:teams', (req, res) => {
 });
 
 app.get('/:judge', (req, res) => {
-
-    getDone(req.params.judge, (err, result) => {
+    var judge = req.params.judge;
+    getDone(judge, (err, result) => {
         if (err) {
             res.send(err);
         }
         // res.send(result);
+        console.log('Result Done: ', result);
+        result.judge = judge;
         res.render('index.hbs', result);
     });
 });
 
-app.post('/review/:team', (req, res) => {
+app.post('/:judge/review/:team', (req, res) => {
     var team = req.params.team;
-    
-    res.render('review.hbs', {
-        team: team,
-        name1: 'Snoop Dogg',
-        name2: 'Hitler',
-        name3: 'Random?'
+    var judge = req.params.judge;
+
+    getTeam(team, (err, result) => {
+        if (err) {
+            return res.send(err);
+        }
+
+        console.log(result);
+        res.render('review.hbs', result[0]);
+        // res.send(result[0]);
     });
+
+    // res.render('review.hbs', {
+    //     team: team,
+    //     name1: 'Snoop Dogg',
+    //     name2: 'Hitler',
+    //     name3: 'Random?'
+    // });
 
 });
 

@@ -19,7 +19,7 @@ const getDone = (judge, callback) => {
             }
         }
 
-        console.log(retObj);
+        
         callback(undefined, retObj);
     });
 };
