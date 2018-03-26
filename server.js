@@ -65,7 +65,7 @@ app.get('/getDone/:judge', (req, res) => {
 /* ===== End of user based temprary route ===== */
 
 app.get('/', (req, res) => {
-    res.render('choose.hbs', {done: true});
+    res.render('index.hbs', {done: true});
 }); 
 
 app.post('/addTeam/:teams', (req, res) => {
@@ -98,6 +98,7 @@ app.get('/:judge', (req, res) => {
         // res.send(result);
         console.log('Result Done: ', result);
         result.judge = judge;
+        // res.send(result);
         res.render('index.hbs', result);
     });
 });

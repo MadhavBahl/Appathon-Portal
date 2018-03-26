@@ -1,0 +1,420 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="ADG: Apple Developers Group
+    is a free initiative to assist developers in higher education
+    institution (VIT), who intend to teach development for the
+    iPhone, iPad and iPod Touch.This student body allows
+    developers to create teams of up to 200 members who can
+    develop, test, debug and distribute applications via the
+    App Store giving them complete access to developer
+    tools, including iPhone SDK and
+    iPhone Dev Centre resources." />
+    <title>App-A-Thon 2k18</title>
+    
+    <link rel="shortcut icon" href="/img/adg-logo.png">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="/css/materialize.min.css"  media="screen,projection"/>
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+
+    <div class="header">
+        <div class="container">
+            <div class="row" style="padding-top: 28px;">
+                <div class="col s12 m5">
+                    <img src="/img/appathon.png" class="responsive-img" alt="">
+                </div>
+
+                <div class="col s12 m5 offset-m1 hide-on-small-only">
+                    <h2 style="text-align: right;">Marking Portal</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mainCard" id="mainCard1">
+        <div class="container mainCardContainer">
+            <div class="row">
+                <div class="col s12 m12">
+                    <div class="card">
+                        <div class="card-content innerCard">
+                            <div class="row">
+                                <div class="col s12 m6">
+                                    <h1 class="step"><b>STEP 1</b></h1>
+                                    <h5 class="step between"><b>Select Team</b></h5>
+                                </div>
+
+                                <div class="col m4 offset-m2 hide-on-small-only" style="text-align: right;">
+                                    <img src="/img/fullicon.webp" class="responsive-img ninety" alt="">
+                                </div>
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col s12 m3">
+                                    <div class="card hoverable">
+                                        <div class="card-content cardPad">
+                                            
+                                            <p>TEAM 1</p>
+                                            <h5 class="center-align fixFont"> {{team1.teamName}} </h5>
+                                            <p class="hide done1">{{team1.done1}}</p>
+                                            <form action="{{judge}}/review/1" class="sendForm" method="POST">
+                                                <div class="right-align">
+                                                    <button id="btn1" class="btn waves-effect waves-light padLess" type="submit" name="action">Submit</button>
+                                                </div>
+                                            </form>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col s12 m3">
+                                    <div class="card hoverable">
+                                        <div class="card-content cardPad">
+                                            
+                                            <p>TEAM 2</p>
+                                            <h5 class="center-align fixFont">{{team2.teamName}}</h5>
+                                            <p class="hide done2">{{team2.done2}}</p>
+                                            <form action="{{judge}}/review/2" class="sendForm" method="POST">
+                                                <div class="right-align">
+                                                    <button id="btn2" class="btn waves-effect waves-light padLess" type="submit" name="action">Submit</button>
+                                                </div>
+                                            </form>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col s12 m3">
+                                    <div class="card hoverable">
+                                        <div class="card-content cardPad">
+                                            
+                                            <p>TEAM 3</p>
+                                            <h5 class="center-align fixFont">{{team3.teamName}}</h5>
+                                            <p class="hide done3">{{team3.done3}}</p>
+                                            <form action="{{judge}}/review/3" class="sendForm" method="POST">
+                                                <div class="right-align">
+                                                    <button id="btn3" class="btn waves-effect waves-light padLess" type="submit" name="action">Submit</button>
+                                                </div>
+                                            </form>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col s12 m3">
+                                    <div class="card hoverable">
+                                        <div class="card-content cardPad">
+                                            
+                                            <p>TEAM 4</p>
+                                            <h5 class="center-align fixFont">{{team4.teamName}}</h5>
+                                            <p class="hide done4">{{team4.done4}}</p>
+                                            <form action="{{judge}}/review/4" class="sendForm" method="POST">
+                                                <div class="right-align">
+                                                    <button id="btn4" class="btn waves-effect waves-light padLess" type="submit" name="action">Submit</button>
+                                                </div>
+                                            </form>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col s12 m3">
+                                    <div class="card hoverable">
+                                        <div class="card-content cardPad">
+                                            
+                                            <p>TEAM 5</p>
+                                            <h5 class="center-align fixFont">{{team5.teamName}}</h5>
+                                            <p class="hide done5">{{team5.done5}}</p>
+                                            <form action="{{judge}}/review/5" class="sendForm" method="POST">
+                                                <div class="right-align">
+                                                    <button id="btn5" class="btn waves-effect waves-light padLess" type="submit" name="action">Submit</button>
+                                                </div>
+                                            </form>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col s12 m3">
+                                    <div class="card hoverable">
+                                        <div class="card-content cardPad">
+                                            
+                                            <p>TEAM 6</p>
+                                            <h5 class="center-align fixFont">{{team6.teamName}}</h5>
+                                            <p class="hide done6">{{team6.done6}}</p>
+                                            <form action="{{judge}}/review/6" class="sendForm" method="POST">
+                                                <div class="right-align">
+                                                    <button id="btn6" class="btn waves-effect waves-light padLess" type="submit" name="action">Submit</button>
+                                                </div>
+                                            </form>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col s12 m3">
+                                    <div class="card hoverable">
+                                        <div class="card-content cardPad">
+                                            
+                                            <p>TEAM 7</p>
+                                            <h5 class="center-align fixFont">NAME</h5>
+                                            <p class="hide done7">{{done7}}</p>
+                                            <form action="{{judge}}/review/7" class="sendForm" method="POST">
+                                                <div class="right-align">
+                                                    <button id="btn7" class="btn waves-effect waves-light padLess" type="submit" name="action">Submit</button>
+                                                </div>
+                                            </form>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col s12 m3">
+                                    <div class="card hoverable">
+                                        <div class="card-content cardPad">
+                                            
+                                            <p>TEAM 8</p>
+                                            <h5 class="center-align fixFont">NAME</h5>
+                                            <p class="hide done8">{{done8}}</p>
+                                            <form action="{{judge}}/review/8" class="sendForm" method="POST">
+                                                <div class="right-align">
+                                                    <button id="btn8" class="btn waves-effect waves-light padLess" type="submit" name="action">Submit</button>
+                                                </div>
+                                            </form>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col s12 m3">
+                                    <div class="card hoverable">
+                                        <div class="card-content cardPad">
+                                            
+                                            <p>TEAM 9</p>
+                                            <h5 class="center-align fixFont">NAME</h5>
+                                            <p class="hide done9">{{done9}}</p>
+                                            <form action="{{judge}}/review/9" class="sendForm" method="POST">
+                                                <div class="right-align">
+                                                    <button id="btn9" class="btn waves-effect waves-light padLess" type="submit" name="action">Submit</button>
+                                                </div>
+                                            </form>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col s12 m3">
+                                    <div class="card hoverable">
+                                        <div class="card-content cardPad">
+                                            
+                                            <p>TEAM 10</p>
+                                            <h5 class="center-align fixFont">NAME</h5>
+                                            <p class="hide done10">{{done10}}</p>
+                                            <form action="{{judge}}/review/10" class="sendForm" method="POST">
+                                                <div class="right-align">
+                                                    <button id="btn10" class="btn waves-effect waves-light padLess" type="submit" name="action">Submit</button>
+                                                </div>
+                                            </form>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col s12 m3">
+                                    <div class="card hoverable">
+                                        <div class="card-content cardPad">
+                                            
+                                            <p>TEAM 11</p>
+                                            <h5 class="center-align fixFont">NAME</h5>
+                                            <p class="hide done11">{{done11}}</p>
+                                            <form action="{{judge}}/review/11" class="sendForm" method="POST">
+                                                <div class="right-align">
+                                                    <button id="btn11" class="btn waves-effect waves-light padLess" type="submit" name="action">Submit</button>
+                                                </div>
+                                            </form>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col s12 m3">
+                                    <div class="card hoverable">
+                                        <div class="card-content cardPad">
+                                            
+                                            <p>TEAM 12</p>
+                                            <h5 class="center-align fixFont">NAME</h5>
+                                            <p class="hide done12">{{done12}}</p>
+                                            <form action="{{judge}}/review/12" class="sendForm" method="POST">
+                                                <div class="right-align">
+                                                    <button id="btn12" class="btn waves-effect waves-light padLess" type="submit" name="action">Submit</button>
+                                                </div>
+                                            </form>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col s12 m3">
+                                    <div class="card hoverable">
+                                        <div class="card-content cardPad">
+                                            
+                                            <p>TEAM 13</p>
+                                            <h5 class="center-align fixFont">NAME</h5>
+                                            <p class="hide done13">{{done13}}</p>
+                                            <form action="{{judge}}/review/13" class="sendForm" method="POST">
+                                                <div class="right-align">
+                                                    <button id="btn13" class="btn waves-effect waves-light padLess" type="submit" name="action">Submit</button>
+                                                </div>
+                                            </form>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col s12 m3">
+                                    <div class="card hoverable">
+                                        <div class="card-content cardPad">
+                                            
+                                            <p>TEAM 14</p>
+                                            <h5 class="center-align fixFont">NAME</h5>
+                                            <p class="hide done14">{{done14}}</p>
+                                            <form action="{{judge}}/review/14" class="sendForm" method="POST">
+                                                <div class="right-align">
+                                                    <button id="btn14" class="btn waves-effect waves-light padLess" type="submit" name="action">Submit</button>
+                                                </div>
+                                            </form>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col s12 m3">
+                                    <div class="card hoverable">
+                                        <div class="card-content cardPad">
+                                            
+                                            <p>TEAM 15</p>
+                                            <h5 class="center-align fixFont">NAME</h5>
+                                            <p class="hide done15">{{done15}}</p>
+                                            <form action="{{judge}}/review/15" class="sendForm" method="POST">
+                                                <div class="right-align">
+                                                    <button id="btn15" class="btn waves-effect waves-light padLess" type="submit" name="action">Submit</button>
+                                                </div>
+                                            </form>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col s12 m3">
+                                    <div class="card hoverable">
+                                        <div class="card-content cardPad">
+                                            
+                                            <p>TEAM 16</p>
+                                            <h5 class="center-align fixFont">NAME</h5>
+                                            <p class="hide done16">{{done16}}</p>
+                                            <form action="{{judge}}/review/16" class="sendForm" method="POST">
+                                                <div class="right-align">
+                                                    <button id="btn16" class="btn waves-effect waves-light padLess" type="submit" name="action">Submit</button>
+                                                </div>
+                                            </form>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col s12 m3">
+                                    <div class="card hoverable">
+                                        <div class="card-content cardPad">
+                                            
+                                            <p>TEAM 17</p>
+                                            <h5 class="center-align fixFont">NAME</h5>
+                                            <p class="hide done17">{{done17}}</p>
+                                            <form action="{{judge}}/review/17" class="sendForm" method="POST">
+                                                <div class="right-align">
+                                                    <button id="btn17" class="btn waves-effect waves-light padLess" type="submit" name="action">Submit</button>
+                                                </div>
+                                            </form>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col s12 m3">
+                                    <div class="card hoverable">
+                                        <div class="card-content cardPad">
+                                            
+                                            <p>TEAM 18</p>
+                                            <h5 class="center-align fixFont">NAME</h5>
+                                            <p class="hide done18">{{done18}}</p>
+                                            <form action="{{judge}}/review/18" class="sendForm" method="POST">
+                                                <div class="right-align">
+                                                    <button id="btn18" class="btn waves-effect waves-light padLess" type="submit" name="action">Submit</button>
+                                                </div>
+                                            </form>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col s12 m3">
+                                    <div class="card hoverable">
+                                        <div class="card-content cardPad">
+                                            
+                                            <p>TEAM 19</p>
+                                            <h5 class="center-align fixFont">NAME</h5>
+                                            <p class="hide done19">{{done19}}</p>
+                                            <form action="{{judge}}/review/19" class="sendForm" method="POST">
+                                                <div class="right-align">
+                                                    <button id="btn19" class="btn waves-effect waves-light padLess" type="submit" name="action">Submit</button>
+                                                </div>
+                                            </form>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col s12 m3">
+                                    <div class="card hoverable">
+                                        <div class="card-content cardPad">
+                                            
+                                            <p>TEAM 20</p>
+                                            <h5 class="center-align fixFont">NAME</h5>
+                                            <p class="hide done20">{{done20}}</p>
+                                            <form action="{{judge}}/review/20" class="sendForm" method="POST">
+                                                <div class="right-align">
+                                                    <button id="btn20" class="btn waves-effect waves-light padLess" type="submit" name="action">Submit</button>
+                                                </div>
+                                            </form>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+
+
+    <div class="footer">
+        <div class="container">
+            
+        </div>
+    </div>
+
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="/js/materialize.min.js"></script>
+    <script type="text/javascript" src="/js/activeCards.js"></script>
+</body>
+</html>
