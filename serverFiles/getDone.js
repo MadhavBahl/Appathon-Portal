@@ -11,7 +11,7 @@ const getDone = (judge, callback) => {
         var retObj = {};
         var retArr = [];
 
-        for(let i=0;i<20;i++) {
+        for(let i=0;i<docs.length;i++) {
             if (judge == 1) {
                 let team = {};
                 team[`num`] = i+1;

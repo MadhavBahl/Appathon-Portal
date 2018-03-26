@@ -7,6 +7,7 @@ const {checkTeam} = require('./serverFiles/checkTeam');
 const {getAllTeams} = require('./serverFiles/getAllTeams');
 const {getDone} = require('./serverFiles/getDone');
 const {getTeam} = require('./serverFiles/getTeam');
+const {deleteAll} = require('./serverFiles/deleteAll');
 
 const port = process.env.PORT || 8000;
 
@@ -62,10 +63,20 @@ app.get('/getDone/:judge', (req, res) => {
     });
 });
 
+app.get('/deleteAll', (req, res) => {
+    deleteAll((err) => {
+        if (err) {
+            res.send(err);
+        }
+
+        res.send('<h1>Deleted!</h1>');
+    })
+});
+
 /* ===== End of user based temprary route ===== */
 
 app.get('/', (req, res) => {
-    res.render('index.hbs', {done: true});
+    res.render('choose.hbs', {done: true});
 }); 
 
 app.post('/addTeam/:teams', (req, res) => {
@@ -113,16 +124,10 @@ app.post('/:judge/review/:team', (req, res) => {
         }
 
         console.log(result);
-        res.render('review.hbs', result[0]);
+        result[0].judge = judge;
         // res.send(result[0]);
+        res.render('review.hbs', result[0]);
     });
-
-    // res.render('review.hbs', {
-    //     team: team,
-    //     name1: 'Snoop Dogg',
-    //     name2: 'Hitler',
-    //     name3: 'Random?'
-    // });
 
 });
 
