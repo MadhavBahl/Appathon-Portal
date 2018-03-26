@@ -6,13 +6,13 @@ var teamSchema = new Schema({
         type: Number,
         required: true
     }, judgeOne: {
-        type: Object,
+        type: Number,
         required: false
     }, judgeTwo: {
-        type: Object,
+        type: Number,
         required: false
     }, judgeThree: {
-        type: Object,
+        type: Number,
         required: false
     }, participant: {
         type: Array,
@@ -48,6 +48,18 @@ var teamSchema = new Schema({
         type: Boolean,
         required: false,
         default: false
+    }, comments1: {
+        type: String,
+        required: false,
+        trim: true
+    }, comments2: {
+        type: String,
+        required: false,
+        trim: true
+    }, comments3: {
+        type: String,
+        required: false,
+        trim: true
     }
 });
 

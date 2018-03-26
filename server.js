@@ -8,6 +8,7 @@ const {getAllTeams} = require('./serverFiles/getAllTeams');
 const {getDone} = require('./serverFiles/getDone');
 const {getTeam} = require('./serverFiles/getTeam');
 const {deleteAll} = require('./serverFiles/deleteAll');
+const {putMarks} = require('./serverFiles/putMarks');
 
 const port = process.env.PORT || 8000;
 
@@ -131,6 +132,23 @@ app.post('/:judge/review/:team', (req, res) => {
 
 });
 
+app.post('/:judge/save/:team', (req, res) => {
+    var judge = req.params.judge;
+    var team = req.params.team;
+    var marks = parseInt(req.body.marks1) + parseInt(req.body.marks2) + parseInt(req.body.marks3);
+    var comments = req.body.comments;
+    var upData = {
+        marks, team, comments
+    };
+    putMarks(upData, judge, (err, result) => {
+        if (err) {
+            res.send(err);
+        }
+        res.render('submit.hbs', {judge});
+    });
+    
+});
+
 app.post('/save/:team', (req, res) => {
 
     res.render('submit.hbs');
@@ -146,7 +164,6 @@ app.post('/:judge/submit/:team', (req, res) => {
     var judge = req.params.judge;
     var team = req.params.team;
     var marks = req.body.marks1 + req.body.marks2 + req.body.marks3;
-
 });
 
 app.listen (port, () => {

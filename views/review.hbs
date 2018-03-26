@@ -188,7 +188,7 @@
 
                             <br>
 
-                            <form action="/save/{{team}}" method="POST">
+                            <form action="/{{judge}}/save/{{teamNum}}" method="POST">
                                 <div class="row">
                                     {{!-- Enter Marks For First Criteria --}}
                                     <div class="col s12 m12">
@@ -207,7 +207,7 @@
                                                             <span style="font-size: 18px;">Marks Awarded: </span>
                                                         </div>
                                                         <div class="col s12 m2 input-field align-center active" style="text-align: center;">
-                                                            <input placeholder="Eg. 9" id="mark1" name="marks1" style="text-align: center; validate" type="text" >
+                                                            <input type="number" placeholder="Eg. 9" id="mark1" name="marks1" style="text-align: center; validate" >
                                                             
                                                         </div>
                                                     </div>
@@ -235,7 +235,7 @@
                                                             <span style="font-size: 18px;">Marks Awarded: </span>
                                                         </div>
                                                         <div class="col s12 m2 input-field align-center" style="text-align: center;">
-                                                            <input placeholder="Eg. 9" name="marks2" style="text-align: center;" type="text" >
+                                                            <input type="number" placeholder="Eg. 9" name="marks2" style="text-align: center;" >
                                                         </div>
                                                     </div>
                                                     
@@ -262,7 +262,7 @@
                                                             <span style="font-size: 18px;">Marks Awarded: </span>
                                                         </div>
                                                         <div class="col s12 m2 input-field align-center" style="text-align: center;">
-                                                            <input placeholder="Eg. 9" name="marks3" style="text-align: center;" type="text" >
+                                                            <input type="number" placeholder="Eg. 9" name="marks3" style="text-align: center;" >
                                                         </div>
                                                     </div>
                                                     
@@ -285,7 +285,7 @@
                                                     <div class="row">
                                                         <br>
                                                         <div class="col s12 m12 input-field align-center" style="text-align: center;">
-                                                            <input placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " name="marks3" style="text-align: center;" type="text" >
+                                                            <input type="text" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " name="comments" style="text-align: center;" >
                                                         </div>
                                                     </div>
                                                     

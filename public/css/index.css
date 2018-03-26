@@ -33,7 +33,7 @@ html, body {
 }
 
 .ninety {
-    width: 64%;
+    width: 60%;
     padding-right: 2%;
 }
 
@@ -45,6 +45,11 @@ html, body {
     /* padding-top: 4px;
     padding-bottom: 4px; */
     margin-top: 4px;
+    /* height: 32px; */
+    padding-left: 18px;
+    padding-right: 18px;
+    /* padding-bottom: 2px;
+    padding-top: -2px; */
 }
 
 .fixFont {
