@@ -9,6 +9,8 @@ const {getDone} = require('./serverFiles/getDone');
 const {getTeam} = require('./serverFiles/getTeam');
 const {deleteAll} = require('./serverFiles/deleteAll');
 const {putMarks} = require('./serverFiles/putMarks');
+const {addRevTeam} = require('./serverFiles/addrevTeam');
+const {getRevTeams} = require('./serverFiles/getRevTeam');
 
 const port = process.env.PORT || 8000;
 
@@ -79,6 +81,38 @@ app.get('/deleteAll', (req, res) => {
 app.get('/', (req, res) => {
     res.render('choose.hbs', {done: true});
 }); 
+
+app.get('/fetchRevTeams', (req, res) => {
+    getRevTeams((err, result) => {
+        if (err) {
+            console.log(err);
+            res.send(err);
+        }
+
+        res.send(result);
+    });
+});
+
+app.post('/addRevTeam/:teams', (req, res) => {
+    var teamNum = req.params.teams;
+    var teamDet = {
+        teamNum: teamNum,
+        participant: req.body.participant,
+        email: req.body.email,
+        productName: req.body.productName,
+        teamName: req.body.teamName,
+        description: req.body.description,
+        links: req.body.links
+    }
+    addRevTeam(teamDet, (err, result) => {
+        if (err) {
+            console.log(err);
+            res.status(400).send(err);
+        }
+
+        res.send(result);
+    });
+});
 
 app.post('/addTeam/:teams', (req, res) => {
     var teamNum = req.params.teams;

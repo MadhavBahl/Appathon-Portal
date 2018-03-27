@@ -2,13 +2,23 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var partSchema = new Schema({
-    name: {
+    teamNum: {
+        type: Number,
+        required: true
+    }, reviewOne: {
+        type: Number,
+        required: false,
+        default: 0
+    }, reviewTwo: {
+        type: Number,
+        required: false
+    }, reviewThree: {
+        type: Number,
+        required: false
+    }, participant: {
         type: Array,
         required: true,
         trim: true
-    }, rollNo: {
-        type: Array,
-        required: true
     }, email: {
         type: String,
         required: true,
@@ -27,9 +37,33 @@ var partSchema = new Schema({
     }, links: {
         type: String,
         required: false   
+    }, done1: {
+        type: Boolean,
+        required: false,
+        default: false
+    }, done2: {
+        type: Boolean,
+        required: false,
+        default: false
+    }, done3: {
+        type: Boolean,
+        required: false,
+        default: false
+    }, comments1: {
+        type: String,
+        required: false,
+        trim: true
+    }, comments2: {
+        type: String,
+        required: false,
+        trim: true
+    }, comments3: {
+        type: String,
+        required: false,
+        trim: true
     }
 });
 
-var Participant = mongoose.model('Participant', partSchema);
+var Part = mongoose.model('Part', partSchema);
 
-module.exports = {Participant};
+module.exports = {Part};
