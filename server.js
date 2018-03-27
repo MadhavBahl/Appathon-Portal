@@ -89,7 +89,7 @@ app.get('/fetchRevTeams', (req, res) => {
             res.send(err);
         }
 
-        res.send(result);
+        res.render('getRev.hbs', {data: result});
     });
 });
 
