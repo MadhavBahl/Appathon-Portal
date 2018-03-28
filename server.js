@@ -11,6 +11,7 @@ const {deleteAll} = require('./serverFiles/deleteAll');
 const {putMarks} = require('./serverFiles/putMarks');
 const {addRevTeam} = require('./serverFiles/addrevTeam');
 const {getRevTeams} = require('./serverFiles/getRevTeam');
+const {countRev} = require('./serverFiles/countPart');
 
 const port = process.env.PORT || 8000;
 
@@ -88,8 +89,17 @@ app.get('/fetchRevTeams', (req, res) => {
             console.log(err);
             res.send(err);
         }
+        countRev((err, count) => {
+            if(err) {
+                res.render('404.hbs');
+            }
 
-        res.render('getRev.hbs', {data: result});
+            res.render('getRev.hbs', {
+                data: result,
+                count
+            });
+        });
+        
     });
 });
 
