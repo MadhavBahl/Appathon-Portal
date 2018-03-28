@@ -5,9 +5,12 @@ const checkRev = (teamNum, callback) => {
     Part.find({ teamNum }, (err, docs) => {
         if (err) {
             return console.log(err);
-            callback(err);
-        } 
-        callback(undefined, docs);
+            callback(false);
+        } else if (docs[0]) {
+            callback(true);
+        } else {
+            callback(false);
+        }
     });
 };
 

@@ -8,9 +8,11 @@ const {getAllTeams} = require('./serverFiles/getAllTeams');
 const {getDone} = require('./serverFiles/getDone');
 const {getTeam} = require('./serverFiles/getTeam');
 const {deleteAll} = require('./serverFiles/deleteAll');
+const {deleteAllRev} = require('./serverFiles/deleteAllRev');
 const {putMarks} = require('./serverFiles/putMarks');
 const {addRevTeam} = require('./serverFiles/addrevTeam');
 const {getRevTeams} = require('./serverFiles/getRevTeam');
+const {getRevDone} = require('./serverFiles/getRevDone');
 const {countRev} = require('./serverFiles/countPart');
 const {checkRev} = require('./serverFiles/checkExistRev');
 
@@ -80,11 +82,20 @@ app.get('/deleteAll', (req, res) => {
 
 app.get('/teamRevNum/:team', (req, res) => {
     var team = req.params.team;
-    checkRev(team, (err, resp) => {
-        res.send(resp);
+    checkRev(team, (team) => {
+        res.send(team);
     });
 });
 
+app.get('/deleteAllRev', (req, res) => {
+    deleteAllRev((err) => {
+        if (err) {
+            res.send(err);
+        }
+
+        res.send('<h1>Deleted!</h1>');
+    })
+});
 /* ===== End of user based temprary route ===== */
 
 app.get('/', (req, res) => {
@@ -92,23 +103,44 @@ app.get('/', (req, res) => {
 }); 
 
 app.get('/fetchRevTeams', (req, res) => {
-    getRevTeams((err, result) => {
+    getRevDone((err, result) => {
         if (err) {
-            console.log(err);
             res.send(err);
         }
+        // res.send(result);
+        console.log('Result Done: ', result);
+        // res.send(result);
+
         countRev((err, count) => {
             if(err) {
                 res.render('404.hbs');
             }
-
-            res.render('getRev.hbs', {
+            var finalDone = {
                 data: result,
                 count
-            });
+            }
+            // res.send(finalDone);
+            res.render('getRev.hbs', finalDone);
         });
-        
     });
+
+    // getRevTeams((err, result) => {
+    //     if (err) {
+    //         console.log(err);
+    //         res.send(err);
+    //     }
+    //     countRev((err, count) => {
+    //         if(err) {
+    //             res.render('404.hbs');
+    //         }
+
+    //         res.render('getRev.hbs', {
+    //             data: result,
+    //             count
+    //         });
+    //     });
+        
+    // });
 });
 
 app.post('/addRevTeam/:teams', (req, res) => {
@@ -122,14 +154,23 @@ app.post('/addRevTeam/:teams', (req, res) => {
         description: req.body.description,
         links: req.body.links
     }
-    addRevTeam(teamDet, (err, result) => {
-        if (err) {
-            console.log(err);
-            res.status(400).send(err);
+    checkRev(teamNum, (team) => {
+        if (team === true) {
+            res.send('This team number is already in use!');
         }
-
-        res.send(result);
+        else {
+            addRevTeam(teamDet, (err, result) => {
+                if (err) {
+                    console.log(err);
+                    res.status(400).send(err);
+                }
+        
+                res.send(result);
+            });
+        }
+        
     });
+    
 });
 
 app.post('/addTeam/:teams', (req, res) => {

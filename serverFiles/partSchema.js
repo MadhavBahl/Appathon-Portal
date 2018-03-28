@@ -37,27 +37,11 @@ var partSchema = new Schema({
     }, links: {
         type: String,
         required: false   
-    }, done1: {
+    }, done: {
         type: Boolean,
         required: false,
         default: false
-    }, done2: {
-        type: Boolean,
-        required: false,
-        default: false
-    }, done3: {
-        type: Boolean,
-        required: false,
-        default: false
-    }, comments1: {
-        type: String,
-        required: false,
-        trim: true
-    }, comments2: {
-        type: String,
-        required: false,
-        trim: true
-    }, comments3: {
+    }, comments: {
         type: String,
         required: false,
         trim: true
