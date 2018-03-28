@@ -78,11 +78,18 @@
                                             <div class="collapsible-header">
                                             
                                                 {{this.teamNum}}. {{this.teamName}}
-                                            <span class="new badge">4</span></div>
+                                            {{!-- <span class="new badge"></span> --}}
+                                            </div>
                                             <div class="collapsible-body">
                                                 <p> <b>Team Name: </b> {{this.teamName}} </p>
-                                                <p> <b>Team Number: </b> {{this.teamNumber}} </p>
-                                                <p> <b>Team Participants: </b> {{this.participant}} </p>
+                                                <p> <b>Team Number: </b> {{this.teamNum}} </p>
+                                                <p> <b>Team Participants: <br> </b> 
+                                                    {{#each this.participant}}
+                                                        <b>Name: </b> {{this.name}}  <br>
+                                                        <b>Register Number: </b> {{this.rollNo}}  <br>
+                                                    {{/each}}
+                                                
+                                                </p>
                                                 <p> <b>Team Product Name: </b> {{this.productName}} </p>
                                                 <p> <b>Team Product Description: </b> {{this.description}} </p>
                                             </div>

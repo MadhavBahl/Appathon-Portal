@@ -12,6 +12,7 @@ const {putMarks} = require('./serverFiles/putMarks');
 const {addRevTeam} = require('./serverFiles/addrevTeam');
 const {getRevTeams} = require('./serverFiles/getRevTeam');
 const {countRev} = require('./serverFiles/countPart');
+const {checkRev} = require('./serverFiles/checkExistRev');
 
 const port = process.env.PORT || 8000;
 
@@ -75,6 +76,13 @@ app.get('/deleteAll', (req, res) => {
 
         res.send('<h1>Deleted!</h1>');
     })
+});
+
+app.get('/teamRevNum/:team', (req, res) => {
+    var team = req.params.team;
+    checkRev(team, (err, resp) => {
+        res.send(resp);
+    });
 });
 
 /* ===== End of user based temprary route ===== */
