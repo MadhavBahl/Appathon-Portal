@@ -15,6 +15,8 @@ const {getRevTeams} = require('./serverFiles/getRevTeam');
 const {getRevDone} = require('./serverFiles/getRevDone');
 const {countRev} = require('./serverFiles/countPart');
 const {checkRev} = require('./serverFiles/checkExistRev');
+const {addRoundTeam} = require('./serverFiles/addRoundTeam');
+const {checkR2} = require('./serverFiles/checkExistRound');
 
 const port = process.env.PORT || 8000;
 
@@ -141,6 +143,54 @@ app.get('/fetchRevTeams', (req, res) => {
     //     });
         
     // });
+});
+
+app.post('/saveForR2/:team', (req, res) => {
+    var team = req.params.team;
+    var marks = parseInt(req.body.marks1) + parseInt(req.body.marks2) + parseInt(req.body.marks3);
+    var comments = req.body.comments;
+    var upData = {
+        marks, team, comments
+    };
+    putMarks(upData, judge, (err, result) => {
+        if (err) {
+            res.send(err);
+        }
+        res.render('submit.hbs', {judge});
+    });
+    
+
+});
+
+
+app.post('/addRoundTeam/:teams', (req, res) => {
+    var teamNum = req.params.teams;
+    var teamDet = {
+        teamNum: teamNum,
+        participant: req.body.participant,
+        email: req.body.email,
+        productName: req.body.productName,
+        teamName: req.body.teamName,
+        description: req.body.description,
+        links: req.body.links
+    }
+    checkR2(teamNum, (team) => {
+        if (team === true) {
+            res.send('This team number is already in use!');
+        }
+        else {
+            addRoundTeam(teamDet, (err, result) => {
+                if (err) {
+                    console.log(err);
+                    res.status(400).send(err);
+                }
+        
+                res.send(result);
+            });
+        }
+        
+    });
+    
 });
 
 app.post('/addRevTeam/:teams', (req, res) => {
