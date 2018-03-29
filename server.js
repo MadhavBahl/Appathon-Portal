@@ -23,7 +23,11 @@ const {countRound} = require('./serverFiles/countRound');
 const {getRoundDone} = require('./serverFiles/getRoundDone');
 const {getRevSelected} = require('./serverFiles/getRevSelected');
 const {putRound1} = require('./serverFiles/putRound1');
+const {putRound2} = require('./serverFiles/putRound2');
 const {checkR1} = require('./serverFiles/checkDoneRev');
+const {checkRF} = require('./serverFiles/checkDoneFinal');
+const {countFinal} = require('./serverFiles/countFinal');
+const {getRoundSelected} = require('./serverFiles/getRoundSelected');
 
 const port = process.env.PORT || 8000;
 
@@ -279,9 +283,68 @@ app.get('/fetchRoundTeams', (req, res) => {
                 count
             }
             // res.send(finalDone);
-            res.render('getRev.hbs', finalDone);
+            res.render('getRound2.hbs', finalDone);
         });
     });
+
+});
+
+app.post('/saveForFinal/:team', (req, res) => {
+    var team = req.params.team;
+    countFinal((err, count) => {
+        if(err) {
+            res.render('404.hbs');
+        }
+
+        var teamNum = count + 1;
+        getRoundSelected(team, (err, resp) => {
+            if (err) {
+                return res.render('404.hbs');
+            }
+            console.log(teamNum);
+            resp[0].teamNum = teamNum;
+            const finalObj = {
+                reviewOne : resp[0].reviewOne,
+                participant : resp[0].participant,
+                done : resp[0].done,
+                teamNum : resp[0].teamNum,
+                email : resp[0].email,
+                productName : resp[0].productName,
+                teamName : resp[0].teamName,
+                description : resp[0].description
+            }
+            checkRF(team, (teamExist) => {
+                if (teamExist === true) {
+                    res.send('This team number is already in use!');
+                }
+                else {
+                    
+                    
+                    // finalObj = _.pickBy(finalObj, (val, key) => key !== '__v');
+                    
+                    // res.send(finalObj);
+                    
+                    addTeam(finalObj, (err, result) => {
+                        if (err) {
+                            console.log(err);
+                            res.status(400).send(err);
+                        }
+                        putRound2(team, (err, modDoc) => {
+                            console.log(modDoc);    
+                            res.render('goBack2.hbs', {result});
+                        })
+                        
+                    });
+                }
+                
+            });
+        });
+        
+        // res.send(finalDone);
+        // res.render('getRev.hbs', finalDone);
+    });
+    
+    
 
 });
 
