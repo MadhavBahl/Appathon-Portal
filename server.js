@@ -28,6 +28,7 @@ const {checkR1} = require('./serverFiles/checkDoneRev');
 const {checkRF} = require('./serverFiles/checkDoneFinal');
 const {countFinal} = require('./serverFiles/countFinal');
 const {getRoundSelected} = require('./serverFiles/getRoundSelected');
+const {getTheFinalDone} = require('./serverFiles/getFinalDone');
 
 const port = process.env.PORT || 8000;
 
@@ -353,8 +354,30 @@ app.post('/saveForFinal/:team', (req, res) => {
         // res.send(finalDone);
         // res.render('getRev.hbs', finalDone);
     });
-    
-    
+});
+
+
+app.get('/fetchFinalTeams', (req, res) => {
+    getTheFinalDone((err, result) => {
+        if (err) {
+            res.send(err);
+        }
+        // res.send(result);
+        console.log('Result Done: ', result);
+        // res.send(result);
+
+        countFinal((err, count) => {
+            if(err) {
+                res.render('404.hbs');
+            }
+            var finalDone = {
+                data: result,
+                count
+            }
+            // res.send(finalDone);
+            res.render('getFinal.hbs', finalDone);
+        });
+    });
 
 });
 

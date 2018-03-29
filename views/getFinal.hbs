@@ -44,7 +44,7 @@
                             <div class="row">
                                 <div class="col s12 m6">
                                     <h1 class="step"><b>Internal Portal</b></h1>
-                                    <h5 class="step between"><b>This Portal Is Used For Round 2</b></h5>
+                                    <h5 class="step between"><b>Top Teams Selected For Final Round</b></h5>
                                 </div>
 
                                 <div class="col m4 offset-m2 hide-on-small-only" style="text-align: right;">
@@ -94,12 +94,18 @@
                                                 <p id="done{{this.teamNum}}">{{this.done}}</p>
                                                 <p> <b>Team Product Name: </b> {{this.productName}} </p>
                                                 <p> <b>Team Product Description: </b> {{this.description}} </p>
+                                                <p> <b>Judge One Marks </b> {{this.judgeOne}} </p>
+                                                <p> <b>Judge One Comments </b> {{this.comments1}} </p>
+                                                <p> <b>Judge Two Marks </b> {{this.judgeTwo}} </p>
+                                                <p> <b>Judge Two Comments </b> {{this.comments2}} </p>
+                                                <p> <b>Judge Three Marks </b> {{this.judgeThree}} </p>
+                                                <p> <b>Judge Three Comments </b> {{this.comments3}} </p>
 
-                                                <form action="/saveForFinal/{{this.teamNum}}" class="sendForm" method="POST">
+                                                {{!-- <form action="/saveForR2/{{this.teamNum}}" class="sendForm" method="POST">
                                                     <div class="right-align">
                                                         <button id="{{this.teamNum}}" class="btn waves-effect waves-light btn-small padLess" type="submit" name="action">Submit</button>
                                                     </div>
-                                                </form>
+                                                </form> --}}
                                             </div>
                                         </li>
                                         
