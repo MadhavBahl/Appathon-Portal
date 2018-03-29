@@ -115,6 +115,16 @@ app.get('/deleteAllRev', (req, res) => {
         res.send('<h1>Deleted!</h1>');
     })
 });
+
+app.get('/deleteAllRound', (req, res) => {
+    deleteAllRound((err) => {
+        if (err) {
+            res.send(err);
+        }
+
+        res.send('<h1>Deleted!</h1>');
+    })
+});
 /* ===== End of user based temprary route ===== */
 
 app.get('/', (req, res) => {
