@@ -1,6 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const hbs = require('hbs');
+const mongoose = require('mongoose');
+var _ = require('lodash');
 
 const {addTeam} = require('./serverFiles/addTeam');
 const {checkTeam} = require('./serverFiles/checkTeam');
@@ -17,6 +19,10 @@ const {countRev} = require('./serverFiles/countPart');
 const {checkRev} = require('./serverFiles/checkExistRev');
 const {addRoundTeam} = require('./serverFiles/addRoundTeam');
 const {checkR2} = require('./serverFiles/checkExistRound');
+const {countRound} = require('./serverFiles/countRound');
+const {getRevSelected} = require('./serverFiles/getRevSelected');
+const {putRound1} = require('./serverFiles/putRound1');
+const {checkR1} = require('./serverFiles/checkDoneRev');
 
 const port = process.env.PORT || 8000;
 
@@ -32,6 +38,12 @@ app.set('view engine', 'hbs');
 
 app.get('/card', (req, res) => {
     res.render('card.hbs', {done: true});
+});
+
+app.get('/putRound/:team', (req, res) => {
+    putRound1(req.params.team, (err, result) => {
+        res.send(result);
+    });
 });
 
 app.get('/review', (req, res) => {
@@ -147,17 +159,59 @@ app.get('/fetchRevTeams', (req, res) => {
 
 app.post('/saveForR2/:team', (req, res) => {
     var team = req.params.team;
-    var marks = parseInt(req.body.marks1) + parseInt(req.body.marks2) + parseInt(req.body.marks3);
-    var comments = req.body.comments;
-    var upData = {
-        marks, team, comments
-    };
-    putMarks(upData, judge, (err, result) => {
-        if (err) {
-            res.send(err);
+    countRound((err, count) => {
+        if(err) {
+            res.render('404.hbs');
         }
-        res.render('submit.hbs', {judge});
+
+        var teamNum = count + 1;
+        getRevSelected(team, (err, resp) => {
+            if (err) {
+                return res.render('404.hbs');
+            }
+            console.log(teamNum);
+            resp[0].teamNum = teamNum;
+            const finalObj = {
+                reviewOne : resp[0].reviewOne,
+                participant : resp[0].participant,
+                done : resp[0].done,
+                teamNum : resp[0].teamNum,
+                email : resp[0].email,
+                productName : resp[0].productName,
+                teamName : resp[0].teamName,
+                description : resp[0].description
+            }
+            checkR1(team, (teamExist) => {
+                if (teamExist === true) {
+                    res.send('This team number is already in use!');
+                }
+                else {
+                    
+                    
+                    // finalObj = _.pickBy(finalObj, (val, key) => key !== '__v');
+                    
+                    // res.send(finalObj);
+                    
+                    addRoundTeam(finalObj, (err, result) => {
+                        if (err) {
+                            console.log(err);
+                            res.status(400).send(err);
+                        }
+                        putRound1(team, (err, modDoc) => {
+                            console.log(modDoc);    
+                            res.render('goBack.hbs', {result});
+                        })
+                        
+                    });
+                }
+                
+            });
+        });
+        
+        // res.send(finalDone);
+        // res.render('getRev.hbs', finalDone);
     });
+    
     
 
 });

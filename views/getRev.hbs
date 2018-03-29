@@ -82,7 +82,7 @@
                                             </div>
                                             <div class="collapsible-body">
                                                 <p> <b>Team Name: </b> {{this.teamName}} </p>
-                                                <p> <b>Team Number: </b> {{this.teamNum}} </p>
+                                                <p> <b>Team Number: </b> {{this.teamNum}}  </p>
                                                 <p> <b>Team Participants: <br> </b> 
                                                     {{#each this.participant}}
                                                         <b>Name: </b> {{this.name}}  <br>
@@ -90,8 +90,16 @@
                                                     {{/each}}
                                                 
                                                 </p>
+
+                                                <p id="done{{this.teamNum}}">{{this.done}}</p>
                                                 <p> <b>Team Product Name: </b> {{this.productName}} </p>
                                                 <p> <b>Team Product Description: </b> {{this.description}} </p>
+
+                                                <form action="/saveForR2/{{this.teamNum}}" class="sendForm" method="POST">
+                                                    <div class="right-align">
+                                                        <button id="{{this.teamNum}}" class="btn waves-effect waves-light btn-small padLess" type="submit" name="action">Submit</button>
+                                                    </div>
+                                                </form>
                                             </div>
                                         </li>
                                         
@@ -100,7 +108,7 @@
                                 {{/each}}
 
                                 <div class="col s12 m12 center">
-                                    <h1>Total Count: {{count}}</h1>
+                                    <h1 >Total Count: <span id="count">{{count}} </span></h1>
                                 </div>
 
                             </div>
@@ -125,6 +133,6 @@
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="/js/materialize.min.js"></script>
-    <script type="text/javascript" src="/js/activeCards.js"></script>
+    <script type="text/javascript" src="/js/activeBTN.js"></script>
 </body>
 </html>
