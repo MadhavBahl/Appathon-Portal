@@ -20,6 +20,7 @@ const {checkRev} = require('./serverFiles/checkExistRev');
 const {addRoundTeam} = require('./serverFiles/addRoundTeam');
 const {checkR2} = require('./serverFiles/checkExistRound');
 const {countRound} = require('./serverFiles/countRound');
+const {getRoundDone} = require('./serverFiles/getRoundDone');
 const {getRevSelected} = require('./serverFiles/getRevSelected');
 const {putRound1} = require('./serverFiles/putRound1');
 const {checkR1} = require('./serverFiles/checkDoneRev');
@@ -138,23 +139,6 @@ app.get('/fetchRevTeams', (req, res) => {
         });
     });
 
-    // getRevTeams((err, result) => {
-    //     if (err) {
-    //         console.log(err);
-    //         res.send(err);
-    //     }
-    //     countRev((err, count) => {
-    //         if(err) {
-    //             res.render('404.hbs');
-    //         }
-
-    //         res.render('getRev.hbs', {
-    //             data: result,
-    //             count
-    //         });
-    //     });
-        
-    // });
 });
 
 app.post('/saveForR2/:team', (req, res) => {
@@ -275,6 +259,30 @@ app.post('/addRevTeam/:teams', (req, res) => {
         
     });
     
+});
+
+app.get('/fetchRoundTeams', (req, res) => {
+    getRoundDone((err, result) => {
+        if (err) {
+            res.send(err);
+        }
+        // res.send(result);
+        console.log('Result Done: ', result);
+        // res.send(result);
+
+        countRound((err, count) => {
+            if(err) {
+                res.render('404.hbs');
+            }
+            var finalDone = {
+                data: result,
+                count
+            }
+            // res.send(finalDone);
+            res.render('getRev.hbs', finalDone);
+        });
+    });
+
 });
 
 app.post('/addTeam/:teams', (req, res) => {
