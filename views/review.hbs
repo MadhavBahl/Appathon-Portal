@@ -58,9 +58,13 @@
                                     <div class="modal-content" style=" padding-bottom: 0px;">
                                         <h4 style="text-align: center;">Are you sure you want to go back?</h4>
                                         {{!-- <p>A bunch of text</p> --}}
+
+                                        
                                     </div>
                                     <div class="modal-footer center">
+                                        
                                         <form action="/{{judge}}" class="align-center center" method="get">
+                                        <a class="modal-action modal-close waves-effect center waves-light btn ">Cancel</a>
                                             <button type="submit" class="modal-action modal-close waves-effect center waves-light btn ">Agree</button>
                                         </form>
                                         
@@ -68,7 +72,7 @@
                                 </div>
 
                                 <div class="col m4 hide-on-small-only" style="text-align: right;">
-                                    <img src="/img/fullicon.webp" class="responsive-img ninety" alt="">
+                                    <img src="/img/fullicon.png" class="responsive-img ninety" alt="">
                                 </div>
                             </div>
 
@@ -195,19 +199,26 @@
                                         <div class="card hoverable">
                                             <div class="card-content innerDetailCard">
                                                 
-                                                <h5 style="">1. First Criteria</h5>
+                                                <h5 style="">1. Technical Complexity </h5>
+                                                <div class="row">
+                                                    <div class="col s12 m12">
+                                                        <p style="padding-left: 25px;"> Underlying technology that was used, provided some form of challenge for participants while they created it. <br> The architecture and structure of the application is well defined.</p>
+                                                    </div>
+                                                    
+                                                </div>
                                                 
                                                 <div class="container marksContainier">
                                                     
+                                                    
                                                     <div class="row">
                                                         <div class="col s12 m6 align-left">
-                                                            <span class="dotted-underline" style="font-size: 18px;">Max Marks: 10</span>
+                                                            <span class="dotted-underline" style="font-size: 18px;">Max Marks: 20</span>
                                                         </div>
                                                         <div class="col s12 m4 align-right" id="marks">
                                                             <span style="font-size: 18px;">Marks Awarded: </span>
                                                         </div>
                                                         <div class="col s12 m2 input-field align-center active" style="text-align: center;">
-                                                            <input type="number" min="1" max="10" placeholder="Eg. 9" id="mark1" name="marks1" style="text-align: center; validate" required>
+                                                            <input type="number" min="1" max="20" placeholder="Eg. 15" id="mark1" name="marks1" style="text-align: center; validate" required>
                                                             
                                                         </div>
                                                     </div>
@@ -223,19 +234,26 @@
                                         <div class="card hoverable">
                                             <div class="card-content innerDetailCard">
                                                 
-                                                <h5 style="">2. Second Criteria</h5>
+                                                <h5 style="">2. Implementation</h5>
+
+                                                <div class="row">
+                                                    <div class="col s12 m12">
+                                                        <p style="padding-left: 25px;"> How much were the participants were able to implement their idea. <br> Was it partially implemented with bugs and error logs or there were very few or negligible problems with the implementation of the app.</p>
+                                                    </div>
+                                                    
+                                                </div>
                                                 
                                                 <div class="container marksContainier">
                                                     
                                                     <div class="row">
                                                         <div class="col s12 m6 align-left">
-                                                            <span class="dotted-underline" style="font-size: 18px;">Max Marks: 10</span>
+                                                            <span class="dotted-underline" style="font-size: 18px;">Max Marks: 20</span>
                                                         </div>
                                                         <div class="col s12 m4 align-right" id="marks">
                                                             <span style="font-size: 18px;">Marks Awarded: </span>
                                                         </div>
                                                         <div class="col s12 m2 input-field align-center" style="text-align: center;">
-                                                            <input type="number" min="1" max="10" placeholder="Eg. 9" name="marks2" style="text-align: center;" required>
+                                                            <input type="number" min="1" max="20" placeholder="Eg. 15" name="marks2" style="text-align: center;" required>
                                                         </div>
                                                     </div>
                                                     
@@ -250,19 +268,95 @@
                                         <div class="card hoverable">
                                             <div class="card-content innerDetailCard">
                                                 
-                                                <h5 style="">3. Third Criteria</h5>
+                                                <h5 style="">3. UI/UX </h5>
+
+                                                <div class="row">
+                                                    <div class="col s12 m12">
+                                                        <p style="padding-left: 25px;">  The polish of the app based on the smooth flow of experience for the user as he navigates through the app. <br> The design and overall pleasantness to the eye based on your audience matters.</p>
+                                                    </div>
+                                                    
+                                                </div>
                                                 
                                                 <div class="container marksContainier">
                                                     
                                                     <div class="row">
                                                         <div class="col s12 m6 align-left">
-                                                            <span class="dotted-underline" style="font-size: 18px;">Max Marks: 10</span>
+                                                            <span class="dotted-underline" style="font-size: 18px;">Max Marks: 20</span>
                                                         </div>
                                                         <div class="col s12 m4 align-right" id="marks">
                                                             <span style="font-size: 18px;">Marks Awarded: </span>
                                                         </div>
                                                         <div class="col s12 m2 input-field align-center" style="text-align: center;">
-                                                            <input type="number" min="1" max="10" placeholder="Eg. 9" name="marks3" style="text-align: center;" required>
+                                                            <input type="number" min="1" max="20" placeholder="Eg. 15" name="marks3" style="text-align: center;" required>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {{!-- Enter Marks For Fourth Criteria --}}
+                                    <div class="col s12 m12">
+                                        <div class="card hoverable">
+                                            <div class="card-content innerDetailCard">
+                                                
+                                                <h5 style="">4. Originality of Idea </h5>
+
+                                                <div class="row">
+                                                    <div class="col s12 m12">
+                                                        <p style="padding-left: 25px;">  How new is this idea in the market ? <br> Who are the competitors and has this idea been copied from somewhere without any changes.</p>
+                                                    </div>
+                                                    
+                                                </div>
+                                                
+                                                <div class="container marksContainier">
+                                                    
+                                                    <div class="row">
+                                                        <div class="col s12 m6 align-left">
+                                                            <span class="dotted-underline" style="font-size: 18px;">Max Marks: 20</span>
+                                                        </div>
+                                                        <div class="col s12 m4 align-right" id="marks">
+                                                            <span style="font-size: 18px;">Marks Awarded: </span>
+                                                        </div>
+                                                        <div class="col s12 m2 input-field align-center" style="text-align: center;">
+                                                            <input type="number" min="1" max="20" placeholder="Eg. 15" name="marks4" style="text-align: center;" required>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    {{!-- Enter Marks For Fourth Criteria --}}
+                                    <div class="col s12 m12">
+                                        <div class="card hoverable">
+                                            <div class="card-content innerDetailCard">
+                                                
+                                                <h5 style="">5. Future Prospects and Business ideology </h5>
+
+                                                <div class="row">
+                                                    <div class="col s12 m12">
+                                                        <p style="padding-left: 25px;">  This criteria looks into the business model and the 100 day plan of the implemented idea and its relevance in the foreseeable future</p>
+                                                    </div>
+                                                    
+                                                </div>
+                                                
+                                                <div class="container marksContainier">
+                                                    
+                                                    <div class="row">
+                                                        <div class="col s12 m6 align-left">
+                                                            <span class="dotted-underline" style="font-size: 18px;">Max Marks: 20</span>
+                                                        </div>
+                                                        <div class="col s12 m4 align-right" id="marks">
+                                                            <span style="font-size: 18px;">Marks Awarded: </span>
+                                                        </div>
+                                                        <div class="col s12 m2 input-field align-center" style="text-align: center;">
+                                                            <input type="number" min="1" max="20" placeholder="Eg. 15" name="marks5" style="text-align: center;" required>
                                                         </div>
                                                     </div>
                                                     
@@ -285,7 +379,7 @@
                                                     <div class="row">
                                                         <br>
                                                         <div class="col s12 m12 input-field align-center" style="text-align: center;">
-                                                            <input type="text" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " name="comments" style="text-align: center;" >
+                                                            <input type="text" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " name="comments{{judge}}" style="text-align: center;" >
                                                         </div>
                                                     </div>
                                                     

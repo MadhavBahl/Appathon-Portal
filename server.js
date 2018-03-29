@@ -158,6 +158,7 @@ app.get('/fetchRevTeams', (req, res) => {
 
 app.post('/saveForR2/:team', (req, res) => {
     var team = req.params.team;
+    comments = req.body.comments;
     countRound((err, count) => {
         if(err) {
             res.render('404.hbs');
@@ -178,7 +179,8 @@ app.post('/saveForR2/:team', (req, res) => {
                 email : resp[0].email,
                 productName : resp[0].productName,
                 teamName : resp[0].teamName,
-                description : resp[0].description
+                description : resp[0].description,
+                comments: comments
             }
             checkR1(team, (teamExist) => {
                 if (teamExist === true) {
@@ -436,7 +438,7 @@ app.post('/:judge/review/:team', (req, res) => {
 app.post('/:judge/save/:team', (req, res) => {
     var judge = req.params.judge;
     var team = req.params.team;
-    var marks = parseInt(req.body.marks1) + parseInt(req.body.marks2) + parseInt(req.body.marks3);
+    var marks = parseInt(req.body.marks1) + parseInt(req.body.marks2) + parseInt(req.body.marks3) + parseInt(req.body.marks4) + parseInt(req.body.marks5);
     var comments = req.body.comments;
     var upData = {
         marks, team, comments

@@ -66,6 +66,10 @@ var teamSchema = new Schema({
         required: false,
         trim: true,
         default: 'NIL'
+    }, comments: {
+        type: String,
+        required: false,
+        trim: true
     }
 });
 

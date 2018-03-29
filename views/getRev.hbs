@@ -96,9 +96,17 @@
                                                 <p> <b>Team Product Description: </b> {{this.description}} </p>
 
                                                 <form action="/saveForR2/{{this.teamNum}}" class="sendForm" method="POST">
-                                                    <div class="right-align">
-                                                        <button id="{{this.teamNum}}" class="btn waves-effect waves-light btn-small padLess" type="submit" name="action">Submit</button>
+                                                    <div class="row">
+                                                        <div class="col s12 m12 input-field align-center" style="text-align: center;">
+                                                            <input type="text" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " name="comments" style="text-align: center;" >
+                                                        </div>
+                                                        <div class="center-align">
+                                                            <button id="{{this.teamNum}}" class="btn waves-effect waves-light btn-small padLess" type="submit" name="action">Submit</button>
+                                                        </div>
                                                     </div>
+                                                    
+
+                                                    
                                                 </form>
                                             </div>
                                         </li>

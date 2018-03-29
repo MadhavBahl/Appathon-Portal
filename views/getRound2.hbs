@@ -94,9 +94,13 @@
                                                 <p id="done{{this.teamNum}}">{{this.done}}</p>
                                                 <p> <b>Team Product Name: </b> {{this.productName}} </p>
                                                 <p> <b>Team Product Description: </b> {{this.description}} </p>
+                                                <p> <b>Comments: </b> {{this.comments}} </p>
 
                                                 <form action="/saveForFinal/{{this.teamNum}}" class="sendForm" method="POST">
-                                                    <div class="right-align">
+                                                    <div class="col s12 m12 input-field align-center" style="text-align: center;">
+                                                        <input type="text" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " name="comments" style="text-align: center;" >
+                                                    </div>
+                                                    <div class="center-align">
                                                         <button id="{{this.teamNum}}" class="btn waves-effect waves-light btn-small padLess" type="submit" name="action">Submit</button>
                                                     </div>
                                                 </form>
