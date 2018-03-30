@@ -228,7 +228,8 @@ app.post('/addRoundTeam/:teams', (req, res) => {
         productName: req.body.productName,
         teamName: req.body.teamName,
         description: req.body.description,
-        links: req.body.links
+        links: req.body.links,
+        track: req.body.track
     }
     checkR2(teamNum, (team) => {
         if (team === true) {
