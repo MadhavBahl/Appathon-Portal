@@ -29,6 +29,7 @@ const {checkRF} = require('./serverFiles/checkDoneFinal');
 const {countFinal} = require('./serverFiles/countFinal');
 const {getRoundSelected} = require('./serverFiles/getRoundSelected');
 const {getTheFinalDone} = require('./serverFiles/getFinalDone');
+const {deleteAllRound} = require('./serverFiles/deleteAllRound');
 
 const port = process.env.PORT || 8000;
 

@@ -23,6 +23,10 @@ var partSchema = new Schema({
         type: String,
         required: true,
         trim: true
+    }, track: {
+        type: String,
+        required: true,
+        trim: true
     }, teamName: {
         type: String,
         required: true,
