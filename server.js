@@ -326,7 +326,8 @@ app.post('/saveForFinal/:team', (req, res) => {
                 email : resp[0].email,
                 productName : resp[0].productName,
                 teamName : resp[0].teamName,
-                description : resp[0].description
+                description : resp[0].description,
+                comments: comments
             }
             checkRF(team, (teamExist) => {
                 if (teamExist === true) {
