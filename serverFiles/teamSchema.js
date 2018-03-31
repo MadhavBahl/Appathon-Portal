@@ -70,11 +70,6 @@ var teamSchema = new Schema({
         type: String,
         required: false,
         trim: true
-    },  links: {
-        type: String,
-        required: false,
-        trim: true,
-        default: "NIL"
     }
 });
 
