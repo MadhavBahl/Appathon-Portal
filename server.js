@@ -441,7 +441,8 @@ app.post('/:judge/review/:team', (req, res) => {
 app.post('/:judge/save/:team', (req, res) => {
     var judge = req.params.judge;
     var team = req.params.team;
-    var marks = parseInt(req.body.marks1) + parseInt(req.body.marks2) + parseInt(req.body.marks3) + parseInt(req.body.marks4) + parseInt(req.body.marks5);
+    
+    var marks = [ parseInt(req.body.marks1) , parseInt(req.body.marks2) , parseInt(req.body.marks3) , parseInt(req.body.marks4) , parseInt(req.body.marks5) ];
     var comments = req.body.comments;
     var upData = {
         marks, team, comments
